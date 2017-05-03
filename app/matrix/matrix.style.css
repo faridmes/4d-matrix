@@ -1,0 +1,23 @@
+.do {
+    background-color: #ff7777;
+    min-height: 350px;
+}
+
+.delegate {
+    background-color: #77ff77;
+    min-height: 350px;
+}
+
+.decide {
+    background-color: #7777ff;
+    min-height: 350px;
+}
+
+.delete {
+    background-color: #eeeeee;
+    min-height: 350px;
+}
+
+.task {
+    font-size: 26px;
+}
