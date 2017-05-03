@@ -1,0 +1,26 @@
+{
+  "name": "4d-matrix",
+  "version": "0.1.0",
+  "description": "Implementation of Eisenhower Matrix using AngularJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lamrii/4d-matrix.git"
+  },
+  "author": "Farid Mesnata",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lamrii/4d-matrix/issues"
+  },
+  "homepage": "https://github.com/lamrii/4d-matrix#readme",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8"
+  }
+}
