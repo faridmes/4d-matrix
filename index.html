@@ -46,13 +46,13 @@
                         <div class="col-md-6 delegate">
                             <h2>Delegate</h2>
                             <ul>
-                                <li class="task" ng-repeat="doTask in matrix.delegateList">{{doTask}}</li>
+                                <li class="task" ng-repeat="doTask in matrix.delegateList track by $index">{{doTask}}</li>
                             </ul>
                         </div>
                         <div class="col-md-6 do">
                             <h2>Do</h2>
                             <ul>
-                                <li class="task" ng-repeat="doTask in matrix.doList">{{doTask}}</li>
+                                <li class="task" ng-repeat="doTask in matrix.doList track by $index">{{doTask}}</li>
                             </ul>
                         </div>
                     </div>
@@ -60,13 +60,13 @@
                         <div class="col-md-6 delete">
                             <h2>Delete</h2>
                             <ul>
-                                <li class="task" ng-repeat="doTask in matrix.deleteList">{{doTask}}</li>
+                                <li class="task" ng-repeat="doTask in matrix.deleteList track by $index">{{doTask}}</li>
                             </ul>
                         </div>
                         <div class="col-md-6 decide">
                             <h2>Decide</h2>
                             <ul>
-                                <li class="task" ng-repeat="doTask in matrix.decideList">{{doTask}}</li>
+                                <li class="task" ng-repeat="doTask in matrix.decideList track by $index">{{doTask}}</li>
                             </ul>
                         </div>
                     </div>
