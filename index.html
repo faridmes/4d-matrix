@@ -28,17 +28,33 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 task-form">
-                            <form>
-                                <label>Task: </label>
-                                <input type="text" name="task" size="60" ng-model="matrix.newTask"/>
-                                <select ng-model="matrix.category">
+                            <form name="taskForm" novalidate>
+                                <label>Task:
+                                    <input type="text" name="description" size="60" required
+                                           ng-model="matrix.task.description"/>
+                                </label>
+
+                                <select name="category" required ng-model="matrix.task.category">
                                     <option value="">Choose</option>
                                     <option value="do">Urgent - Important</option>
                                     <option value="delegate">Urgent - Not important</option>
                                     <option value="decide">Not urgent - Important</option>
                                     <option value="delete">Not urgent - Not important</option>
                                 </select>
-                                <button ng-click="matrix.addTask()">Add task</button>
+
+                                <button ng-click="matrix.addTask()" type="button" ng-disabled="taskForm.$invalid">
+                                    Add task
+                                </button>
+
+                                <span class="alert-danger"
+                                      ng-if="taskForm.description.$touched && taskForm.description.$error.required">
+                                    A task is required.&nbsp
+                                </span>
+
+                                <span class="alert-danger"
+                                      ng-if="taskForm.category.$dirty && taskForm.category.$error.required">
+                                    You have too choose a category.
+                                </span>
                             </form>
                         </div>
                     </div>
@@ -46,13 +62,13 @@
                         <div class="col-md-6 delegate">
                             <h2>Delegate</h2>
                             <ul>
-                                <li class="task" ng-repeat="doTask in matrix.delegateList track by $index">{{doTask}}</li>
+                                <li class="task" ng-repeat="task in matrix.delegateList track by $index">{{task.description}}</li>
                             </ul>
                         </div>
                         <div class="col-md-6 do">
                             <h2>Do</h2>
                             <ul>
-                                <li class="task" ng-repeat="doTask in matrix.doList track by $index">{{doTask}}</li>
+                                <li class="task" ng-repeat="task in matrix.doList track by $index">{{task.description}}</li>
                             </ul>
                         </div>
                     </div>
@@ -60,13 +76,13 @@
                         <div class="col-md-6 delete">
                             <h2>Delete</h2>
                             <ul>
-                                <li class="task" ng-repeat="doTask in matrix.deleteList track by $index">{{doTask}}</li>
+                                <li class="task" ng-repeat="task in matrix.deleteList track by $index">{{task.description}}</li>
                             </ul>
                         </div>
                         <div class="col-md-6 decide">
                             <h2>Decide</h2>
                             <ul>
-                                <li class="task" ng-repeat="doTask in matrix.decideList track by $index">{{doTask}}</li>
+                                <li class="task" ng-repeat="task in matrix.decideList track by $index">{{task.description}}</li>
                             </ul>
                         </div>
                     </div>

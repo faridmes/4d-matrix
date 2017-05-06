@@ -11,26 +11,27 @@
         vm.delegateList = [];
         vm.decideList = [];
         vm.deleteList = [];
-        vm.newTask = '';
-        vm.category = '';
+        vm.task = {
+            description: '',
+            category: ''
+        };
 
         vm.addTask = function () {
-            switch (vm.category) {
+            switch (vm.task.category) {
                 case 'do':
-                    vm.doList.push(vm.newTask);
+                    vm.doList.push(vm.task);
                     break;
                 case 'delegate':
-                    vm.delegateList.push(vm.newTask);
+                    vm.delegateList.push(vm.task);
                     break;
                 case 'decide':
-                    vm.decideList.push(vm.newTask);
+                    vm.decideList.push(vm.task);
                     break;
                 case 'delete':
-                    vm.deleteList.push(vm.newTask);
+                    vm.deleteList.push(vm.task);
                     break;
                 default:
             }
-        }
+        };
     }
-
 }());
