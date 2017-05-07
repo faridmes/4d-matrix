@@ -7,7 +7,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 task-form">
-                <form name="taskForm" novalidate>
+                <form name="matrix.taskForm" novalidate>
                     <label>
                         Task:
                         <input type="text" name="description" size="60" required ng-model="matrix.task.description"/>
@@ -21,14 +21,17 @@
                         <option value="delete">Not urgent - Not important</option>
                     </select>
 
-                    <button ng-click="matrix.addTask()" type="button" ng-disabled="taskForm.$invalid">Add task</button>
+                    <button ng-click="matrix.addTask()" type="button" ng-disabled="matrix.taskForm.$invalid">
+                        Add task
+                    </button>
 
                     <span class="alert-danger"
-                          ng-if="taskForm.description.$touched && taskForm.description.$error.required">
-                                    A task is required.
+                          ng-if="matrix.taskForm.description.$dirty && matrix.taskForm.description.$error.required">
+                        A task is required.
                     </span>
 
-                    <span class="alert-danger" ng-if="taskForm.category.$dirty && taskForm.category.$error.required">
+                    <span class="alert-danger"
+                          ng-if="matrix.taskForm.category.$dirty && matrix.taskForm.category.$error.required">
                         You have too choose a category.
                     </span>
                 </form>
