@@ -4,34 +4,28 @@
     angular.module('4d-matrix.matrix')
         .controller('matrixController', MatrixController);
 
-    function MatrixController() {
+    MatrixController.$inject = ['matrixListsService'];
+
+    function MatrixController(matrixListsService) {
         var vm = this;
 
-        vm.doList = [];
-        vm.delegateList = [];
-        vm.decideList = [];
-        vm.deleteList = [];
+        vm.doList = matrixListsService.getDoList();
+        vm.delegateList = matrixListsService.getDelegateList();
+        vm.decideList = matrixListsService.getDecideList();
+        vm.deleteList = matrixListsService.getDeleteList();
         vm.task = {
             description: '',
             category: ''
         };
 
         vm.addTask = function () {
-            switch (vm.task.category) {
-                case 'do':
-                    vm.doList.push(vm.task);
-                    break;
-                case 'delegate':
-                    vm.delegateList.push(vm.task);
-                    break;
-                case 'decide':
-                    vm.decideList.push(vm.task);
-                    break;
-                case 'delete':
-                    vm.deleteList.push(vm.task);
-                    break;
-                default:
-            }
+            var newTask = angular.copy(vm.task);
+
+            matrixListsService.addTask(newTask);
+
+            vm.task.description = '';
+            vm.task.category = '';
+            vm.taskForm.$setPristine();
         };
     }
 }());
