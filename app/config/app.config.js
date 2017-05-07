@@ -1,5 +1,5 @@
 (function() {
     'use strict';
 
-    angular.module('4d-matrix', ['4d-matrix.matrix']);
+    angular.module('4d-matrix', ['4d-matrix.matrix', 'ui.router']);
 }());
