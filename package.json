@@ -4,6 +4,7 @@
   "description": "Implementation of Eisenhower Matrix using AngularJs",
   "main": "index.js",
   "scripts": {
+    "test": "./node_modules/karma/bin/karma start",
     "start": "./node_modules/browser-sync/bin/browser-sync.js start -s"
   },
   "repository": {
@@ -23,6 +24,12 @@
     "jquery": "^3.2.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.8"
+    "angular-mocks": "^1.6.4",
+    "browser-sync": "^2.18.8",
+    "jasmine": "^2.6.0",
+    "karma": "^1.7.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "phantomjs-prebuilt": "^2.1.14"
   }
 }

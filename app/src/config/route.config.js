@@ -7,7 +7,7 @@
             $stateProvider.state({
                 name: 'matrix',
                 url: '/matrix',
-                templateUrl: 'app/matrix/matrix.html',
+                templateUrl: 'app/src/matrix/matrix.html',
                 controller: 'matrixController',
                 controllerAs: 'matrix'
             });
