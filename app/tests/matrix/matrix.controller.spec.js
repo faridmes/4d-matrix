@@ -38,6 +38,14 @@
             expect(matrixController.taskForm.$setPristine).toHaveBeenCalled();
         });
 
+        it('should tell the service to remove a task from a list', function() {
+            spyOn(matrixListsServiceMock, 'removeTask');
+
+            matrixController.removeTask(0, 'decide');
+
+            expect(matrixListsServiceMock.removeTask).toHaveBeenCalledWith(0, 'decide');
+        });
+
         function createMatrixListsServiceMock() {
             return {
                 addTask: function() {
@@ -50,6 +58,8 @@
                     return [{description: 'A task'}, {description: 'A task'}];
                 }, getDeleteList: function() {
                     return [];
+                }, removeTask: function(index, category) {
+
                 }
             };
         }

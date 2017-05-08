@@ -45,5 +45,23 @@
         service.getDeleteList = function () {
             return deleteList;
         };
+
+        service.removeTask = function (index, category) {
+            switch (category) {
+                case 'do':
+                    doList.splice(index, 1);
+                    break;
+                case 'delegate':
+                    delegateList.splice(index, 1);
+                    break;
+                case 'decide':
+                    decideList.splice(index, 1);
+                    break;
+                case 'delete':
+                    deleteList.splice(index, 1);
+                    break;
+                default:
+            }
+        }
     }
 }());

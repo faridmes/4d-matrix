@@ -1,23 +1,27 @@
-.do {
+div.do {
     background-color: #ff7777;
     min-height: 350px;
 }
 
-.delegate {
+div.delegate {
     background-color: #77ff77;
     min-height: 350px;
 }
 
-.decide {
+div.decide {
     background-color: #7777ff;
     min-height: 350px;
 }
 
-.delete {
+div.delete {
     background-color: #eeeeee;
     min-height: 350px;
 }
 
-.task {
-    font-size: 26px;
+li > span.task {
+    font-size: 20px;
+}
+
+li > span.glyphicon-remove {
+    color: red;
 }

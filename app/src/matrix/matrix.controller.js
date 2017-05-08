@@ -9,6 +9,9 @@
     function MatrixController(matrixListsService) {
         var vm = this;
 
+        vm.removeTask = removeTask;
+        vm.addTask = addTask;
+
         vm.doList = matrixListsService.getDoList();
         vm.delegateList = matrixListsService.getDelegateList();
         vm.decideList = matrixListsService.getDecideList();
@@ -18,14 +21,16 @@
             category: ''
         };
 
-        vm.addTask = function () {
+        function addTask () {
             var newTask = angular.copy(vm.task);
-
             matrixListsService.addTask(newTask);
-
             vm.task.description = '';
             vm.task.category = '';
             vm.taskForm.$setPristine();
         };
+
+        function removeTask(index, category) {
+            matrixListsService.removeTask(index, category);
+        }
     }
 }());

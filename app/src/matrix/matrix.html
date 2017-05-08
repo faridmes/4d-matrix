@@ -41,13 +41,23 @@
             <div class="col-md-6 delegate">
                 <h2>Delegate</h2>
                 <ul>
-                    <li class="task" ng-repeat="task in matrix.delegateList track by $index">{{task.description}}</li>
+                    <li ng-repeat="task in matrix.delegateList track by $index">
+                        <span class="task">{{task.description}}</span>
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"
+                              ng-click="matrix.removeTask($index, task.category)">
+                        </span>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-6 do">
                 <h2>Do</h2>
                 <ul>
-                    <li class="task" ng-repeat="task in matrix.doList track by $index">{{task.description}}</li>
+                    <li ng-repeat="task in matrix.doList track by $index">
+                        <span class="task">{{task.description}}</span>
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"
+                              ng-click="matrix.removeTask($index, task.category)">
+                        </span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -55,13 +65,23 @@
             <div class="col-md-6 delete">
                 <h2>Delete</h2>
                 <ul>
-                    <li class="task" ng-repeat="task in matrix.deleteList track by $index">{{task.description}}</li>
+                    <li ng-repeat="task in matrix.deleteList track by $index">
+                        <span class="task">{{task.description}}</span>
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"
+                              ng-click="matrix.removeTask($index, task.category)">
+                        </span>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-6 decide">
                 <h2>Decide</h2>
                 <ul>
-                    <li class="task" ng-repeat="task in matrix.decideList track by $index">{{task.description}}</li>
+                    <li ng-repeat="task in matrix.decideList track by $index">
+                        <span class="task">{{task.description}}</span>
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"
+                              ng-click="matrix.removeTask($index, task.category)">
+                        </span>
+                    </li>
                 </ul>
             </div>
         </div>
