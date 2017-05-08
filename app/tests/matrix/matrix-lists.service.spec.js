@@ -60,5 +60,20 @@
             expect(matrixListsService.getDeleteList()).toContain(task);
         });
 
+        it('should remove a task from the deleteList', function () {
+            var task = {
+                description: 'A task',
+                category: 'delete'
+            };
+
+            matrixListsService.addTask(task);
+
+            expect(matrixListsService.getDeleteList().length).toEqual(1);
+
+            matrixListsService.removeTask(0, 'delete');
+
+            expect(matrixListsService.getDeleteList().length).toEqual(0);
+        });
+
     });
 }());
